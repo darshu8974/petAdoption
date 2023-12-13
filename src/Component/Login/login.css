@@ -1,0 +1,89 @@
+#login_box{
+    background-color: rgba(185, 172, 172, 0.493);
+    margin-left: 510px;
+    margin-top: 10px;
+    height:690px;
+    width: 520px;
+    border-radius: 10px;
+}
+#title{
+    color: rgb(0, 0, 0);
+    margin-left: 190px;
+    margin-top: -65px;
+}
+#welcome{
+    margin-left: 99px;
+    text-shadow: 1px 1px rgb(249, 224, 224);
+}
+#email_text{
+    margin-left: 60px;
+}
+#password_text{
+    Margin-left: 60px;
+}
+#text{
+    height: 40px;
+    width: 400px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+#forgot_pass{
+    margin-left: 60px;
+}
+#login_button{
+    margin-left: 100px;
+    height: 55px;
+    width: 330px;
+    border-radius: 10px;
+    background-color: rgb(96, 77, 219);
+    cursor: pointer;
+}
+#login_button:hover{
+    background-color: rgb(232, 224, 224);
+    cursor: pointer;
+
+}
+
+.signin_button{
+    margin-left: 100px;
+    height: 55px;
+    width: 330px;
+    border-radius: 10px;
+    background-color: rgb(242, 242, 247);
+    cursor: pointer;
+}
+.signin_button:hover{
+    background-color: rgb(89, 46, 207);
+}
+
+#sign_msg
+{
+    margin-left: 200px;
+}
+hr{
+    background-color: rgb(255, 0, 0);
+}
+
+#back1
+{
+    background-image: url("img23.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+img {
+    width: 50px; 
+    height: 50px; 
+    margin-top: -8px;
+    margin-left: 59px;
+}
+
+#new
+{
+    margin-left: 50px;
+}
+  

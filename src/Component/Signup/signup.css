@@ -1,0 +1,92 @@
+#login_box{
+    background-color: rgba(239, 235, 235, 0.42);
+    margin-left: 510px;
+    margin-top: 15px;
+    height:1055px;
+    width: 550px;
+    border-radius: 10px;
+}
+#title{
+    color: rgb(0, 0, 0);
+    margin-left: 179px;
+    margin-top: -65px;
+}
+#welcome{
+    margin-left: 99px;
+}
+#email_text{
+
+    margin-left: 60px;
+    height: 3px;
+    
+}
+
+#text{
+    height: 40px;
+    width: 400px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+#forgot_pass{
+    margin-left: 60px;
+}
+
+#Conf_pass
+{
+     margin-left: 60px;
+}
+
+#age
+{
+    height: 40px;
+    width: 140px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+#num
+{
+    margin-left: 60px;
+    height: 40px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+#signin_button{
+    margin-left: 100px;
+    height: 60px;
+    width: 330px;
+    border-radius: 10px;
+    background-color: rgb(105, 70, 201);
+    cursor: pointer;
+}
+#signin_button:hover{
+    background-color: rgb(243, 242, 246);
+}
+
+#sign_msg
+{
+    margin-left: 200px;
+}
+hr{
+    background-color: rgb(255, 0, 0);
+}
+
+#add1
+{
+    height: 60px;
+    width: 300px;
+    margin-left: 60px;
+    border-radius: 10px;
+}
+
+#back1
+{
+    background-image: url("img23.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    
+}
