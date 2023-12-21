@@ -1,0 +1,78 @@
+/* Home.css */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content-container {
+    flex-grow: 1;
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: #ffc0cb;  */
+  }
+
+.content-container h1 {
+  color: #333;
+}
+
+.content-container p {
+  color: #666;
+}
+
+.footer-container {
+  padding: 20px;
+  background-color: #ffc0cb; /* Light pink background color */
+  text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    margin-top: 20px;
+  }
+
+
+/* home.css */
+.main-container {
+ 
+  min-height: 100vh;
+  background-image: url('bac2.webp'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+
+}
+
+.img1{
+  
+  width: 7.8cm;
+  height: 7cm;
+  margin-left: -1100px;
+  margin-top: -250px;
+  
+}
+.img2{
+  
+  width: 7cm;
+  height: 7.9cm;
+  margin-left: 850px;
+  margin-top: -600px;
+  margin-bottom: 100px;
+  
+}
+.img3{
+  
+  width: 5.3cm;
+  height: 5cm;
+  margin-left: 400px;
+  margin-bottom: 0px;
+}
+
+
+.yu{
+  background-color: #66656589;
+}
+

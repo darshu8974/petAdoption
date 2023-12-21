@@ -1,54 +1,127 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './signup.css';
+import { Link } from 'react-router-dom';
+import { useUser } from '../UserContext/UserContext';
 
-class Signup extends React.Component{
-    render(){
-        return(
-            <div id="back1">
-            <div class='well' id="login_box">
-                <div id="welcome">
-                    <br></br>
-                    <h1 id="welcome_txt">Sign Up to</h1><h1 id="title">'Happy Tails'</h1>
-                </div>
-                <div>
+const SignUp = () => {
+  const { updateUser } = useUser();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isFirstNameValid, setIsFirstNameValid] = useState(true);
+  const [isLastNameValid, setIsLastNameValid] = useState(true);
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
 
-                <h3 id="email_text">Name</h3><br></br>
-                    <input type="text" placeholder="Enter your name ..." id="text">
-                    </input>
+  const handleFirstNameChange = (e) => {
+    const value = e.target.value;
+    setFirstName(value);
+    setIsFirstNameValid(value.trim() !== '');
+  };
 
-                    <h3 id="email_text">Email</h3><br></br>
-                    <input type="email" placeholder="Enter your email ..." id="text" required >
-                    </input>
+  const handleLastNameChange = (e) => {
+    const value = e.target.value;
+    setLastName(value);
+    setIsLastNameValid(value.trim() !== '');
+  };
 
-                    <h3 id="email_text">Password</h3><br></br>
-                    <input type="password" placeholder="Enter your password ..." id="text"></input>
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    setIsEmailValid(/^\S+@\S+\.\S+$/.test(value));
+  };
 
-                    
-                    <h3 id="email_text">Confirm Password</h3><br></br>
-                    <input type="password" placeholder="Confirm your password ..." id="text"></input>
-                    
-                    <h3 id="email_text">Enter Age</h3><br></br>
-                    <input type="number" placeholder='Enter your age ...' id="age"></input>
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+    setIsPasswordValid(value.length >= 8);
+  };
 
-                    <h3 id="email_text">Enter Mobile No</h3><br></br>
-                    <input type="tel" placeholder='Enter your number ...' id="text"></input><br></br>
-                    
-                    <h3 id="email_text">Enter Address</h3><br></br>
-                    <input type="text" placeholder='Enter your address ...' id="add1"></input>
-                    
-                    <h3 id="email_text">I accept terms and conditions <input type="checkbox"></input></h3>
-                    
-                    
-                    <br></br><br></br><br></br>
+  const isFormValid = isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid;
 
-                    <button id="signin_button"><h3>Sign Up</h3></button>
-                    
-                </div>
-            </div>
-            </div>
-        );
+  const handleSignUp = () => {
+    if (isFormValid) {
+      updateUser(firstName, lastName);
+      // Continue with sign-up logic
+      // You can make API calls or perform other actions here
     }
-}
-export default Signup;
+  };
 
+  return (
+    <section>
+      <div className="form-box1">
+        <div className="form-value">
+          <form action="">
+            <h2 className='wel'>Sign up</h2>
+            <div className="inputbox">
+              <ion-icon name="person-outline"></ion-icon>
+              <input
+                type="text"
+                required
+                autoFocus
+                value={firstName}
+                onChange={handleFirstNameChange}
+              />
+              <label htmlFor="">First Name</label>
+              {!isFirstNameValid && <p className="error-message">Please enter your first name.</p>}
+            </div>
+            <div className="inputbox">
+              <ion-icon name="person-outline"></ion-icon>
+              <input
+                type="text"
+                required
+                value={lastName}
+                onChange={handleLastNameChange}
+              />
+              <label htmlFor="">Last Name</label>
+              {!isLastNameValid && <p className="error-message">Please enter your last name.</p>}
+            </div>
+            <div className="inputbox">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <label htmlFor="">Email</label>
+              {!isEmailValid && <p className="error-message">Please enter a valid email address.</p>}
+            </div>
+            <div className="inputbox">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={handlePasswordChange}
+              />
+              <label htmlFor="">Password</label>
+              {!isPasswordValid && (
+                <p className="error-message">Password must be at least 8 characters long.</p>
+              )}
+            </div>
+            <div className="forget">
+              <label htmlFor="">
+                <input type="checkbox" id="Rememberme" />
+                Remember Me <br />
+              </label>
+            </div>
+            <Link to="/Landing">
+              <button className="loginbutton1" disabled={!isFormValid} onClick={handleSignUp}>
+                Sign up
+              </button>
+            </Link>
+            <div className="register">
+              <p className='sd'>
+                Already have an Account? <Link to="/Login">Login</Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
 
+export default SignUp;

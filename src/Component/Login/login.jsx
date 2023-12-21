@@ -1,74 +1,141 @@
-import React , {useState} from 'react';
-import myImage from './instagram.png';
-import myImage1 from './reddit.png';
-import myImage2 from './twitt.png';
-import myImage3 from './facebook.png';
+// Login.jsx
+
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './login.css';
-//import { Link } from 'react-router-dom';
 
-function Login()
-{
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const handleEmailChange = (e) => {setEmail(e.target.value);};
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      isEmailValid: true,
+      isPasswordValid: true,
+      isFormFilled: true,
+      isLoginAttempted: false, // Added state for login attempt check
+    };
+  }
 
-  const handlePasswordChange = (e) => {setPassword(e.target.value);};
-
-  const handleSubmit = (e) => 
-  {
-    console.log('Email:', email, 'Password:', password);
+  handleEmailChange = (e) => {
+    const newEmail = e.target.value;
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail);
+    this.setState({
+      email: newEmail,
+      isEmailValid,
+      isFormFilled: true,
+    });
   };
-        return(
-            <div id="back1">
-            <div class='well' id="login_box">
-                <div id="welcome">
-                    <br></br>
-                    <h1 id="welcome_txt">Welcome to</h1><h1 id="title">Happy Tails</h1>
-                </div>
 
-                <div>
-                    <h3 id="email_text">
-                        Email
-                    </h3>
-                    <input type="email"  placeholder="Enter your email ..." id="text" value={email} onChange={handleEmailChange} autoFocus required>
-                </input><br></br>
+  handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    const isPasswordValid = newPassword.length >= 6;
+    this.setState({
+      password: newPassword,
+      isPasswordValid,
+      isFormFilled: true,
+    });
+  };
 
+  handleLoginClick = () => {
+    const { email, password } = this.state;
+    const isFormFilled = email.trim() !== '' && password.trim() !== '';
+    const isLoginAttempted = true;
 
-                    <h3 id="password_text">
-                        Password
-                    </h3>
-                    <input type="password" placeholder="Enter your password ..." id="text" maxLength={8} value={password} onChange={handlePasswordChange}>
-                    </input>
+    this.setState({
+      isFormFilled,
+      isLoginAttempted,
+    });
 
+    // Continue with login logic if the form is filled
+    if (isFormFilled) {
+      // Add your login logic here
+    }
+  };
 
-                    <h4 id="forgot_pass">Forgot your password?</h4>
+  render() {
+    const { email, password, isEmailValid, isPasswordValid, isFormFilled, isLoginAttempted } = this.state;
 
+    return (
+      <div className='section'>
+        <div className='wrapper1'>
+          <div id="welcome1">
+            <br></br>
+            <h1 id="welcome_text1">LOGIN</h1>
+            <h1 id="title1"></h1><br></br>
+          </div>
 
-                    <button id="login_button"><h3>Login</h3></button><br></br><br></br>
-                    <hr></hr>
-
-
-                    <h4 id="sign_msg">Or try Signing in </h4>
-
-
-                  <button class="signin_button"><h3>
-                        Signup </h3></button>
-  
-                  
-                        <div>
-                        
-                       <p id="new">Follow us on </p>
-                       
-                       <img src={myImage} alt="" />
-                       <img src={myImage1} alt="" />
-                       <img src={myImage2} alt="" />
-                       <img src={myImage3} alt="" />
-                      </div>                        
-                </div>
+          <div className='qqq'>
+            <h3 id="email_text1">Email</h3>
+            <div className='mailtext'>
+              <h4>
+                <input
+                  type="email"
+                  id="text11"
+                  required
+                  value={email}
+                  onChange={this.handleEmailChange}
+                  className={isEmailValid ? '' : 'invalid-email'}
+                />
+              </h4>
+              {isLoginAttempted && !isFormFilled && email.trim() === '' && (
+                <p className='error-message'>Please fill in the email.</p>
+              )}
+              {isEmailValid ? null : (
+                <p className='error-message'>Enter a valid email address.</p>
+              )}
             </div>
+            <br></br>
+
+            <h3 id="password_text1">Password</h3>
+            <input
+              type="password"
+              id="text22"
+              required
+              value={password}
+              onChange={this.handlePasswordChange}
+              className={isPasswordValid ? '' : 'invalid-password'}
+            />
+            {isLoginAttempted && !isFormFilled && password.trim() === '' && (
+              <p className='error-message'>Please fill in the password.</p>
+            )}
+            {isPasswordValid ? null : (
+              <p className='error-message'>Password must be at least 6 characters long.</p>
+            )}
+            <br></br><br></br><br></br>
+
+            <div className='rm'>
+              <label htmlFor='check'><input type='checkbox' id='check'></input>Remember Password</label>
             </div>
-        );
+            <br></br>
+
+            <div className='btn'>
+              <Link to='/Home'>
+                <button
+                  id='loginbutton1'
+                  disabled={!isEmailValid || !isPasswordValid || !isFormFilled}
+                  onClick={this.handleLoginClick}
+                >
+                  LOGIN
+                </button>
+              </Link>
+            </div>
+            <br></br><br></br><br></br>
+
+            <hr className='hr'></hr>
+            <br></br>
+            <h3 id="sign_msg1">or </h3>
+            <br></br>
+            <h3>
+              <Link to='/Signup' style={{textDecoration: "none"}}>
+                <h3 className='signuplink'>Sign Up</h3>
+              </Link>
+            </h3>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
 export default Login;
-
-

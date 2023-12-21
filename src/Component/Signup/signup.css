@@ -1,92 +1,131 @@
-#login_box{
-    background-color: rgba(239, 235, 235, 0.42);
-    margin-left: 510px;
-    margin-top: 15px;
-    height:1055px;
-    width: 550px;
-    border-radius: 10px;
-}
-#title{
-    color: rgb(0, 0, 0);
-    margin-left: 179px;
-    margin-top: -65px;
-}
-#welcome{
-    margin-left: 99px;
-}
-#email_text{
-
-    margin-left: 60px;
-    height: 3px;
-    
-}
-
-#text{
-    height: 40px;
-    width: 400px;
-    margin-left: 60px;
-    border-radius: 10px;
-}
-#forgot_pass{
-    margin-left: 60px;
-}
-
-#Conf_pass
-{
-     margin-left: 60px;
-}
-
-#age
-{
-    height: 40px;
-    width: 140px;
-    margin-left: 60px;
-    border-radius: 10px;
-}
-#num
-{
-    margin-left: 60px;
-    height: 40px;
-    width: 400px;
-    border-radius: 10px;
-}
-
-#signin_button{
-    margin-left: 100px;
-    height: 60px;
-    width: 330px;
-    border-radius: 10px;
-    background-color: rgb(105, 70, 201);
-    cursor: pointer;
-}
-#signin_button:hover{
-    background-color: rgb(243, 242, 246);
-}
-
-#sign_msg
-{
-    margin-left: 200px;
-}
-hr{
-    background-color: rgb(255, 0, 0);
-}
-
-#add1
-{
-    height: 60px;
-    width: 300px;
-    margin-left: 60px;
-    border-radius: 10px;
-}
-
-#back1
-{
-    background-image: url("img23.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
     margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+section{
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    width: 100%;
     
+    background: url('C:\Users\darsh\Desktop\My_Website\pet_adoption\src\Component\Images\bac111.jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.form-box1{
+    position: relative;
+    width: 450px;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px ;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.forget label input{
+    margin-right: 3px;
+    
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background: #cb1212;
+    border: 3px;
+    outline:#0c0c0c;
+    cursor: pointer;
+    /* font-size: 1em; */
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+    color: rgb(39, 15, 171);
+}
+.loginbutton1:hover{
+    background-color:#cb1212;
+}
+
+.wel{
+    color: rgba(0, 0, 0, 0.776);
+    text-shadow:2px 2px  rgb(125, 125, 125);
+}
+
+.sd{
+    color: white;
 }

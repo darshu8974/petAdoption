@@ -1,89 +1,180 @@
-#login_box{
-    background-color: rgba(185, 172, 172, 0.493);
-    margin-left: 510px;
-    margin-top: 10px;
-    height:690px;
-    width: 520px;
-    border-radius: 10px;
-}
-#title{
-    color: rgb(0, 0, 0);
-    margin-left: 190px;
-    margin-top: -65px;
-}
-#welcome{
-    margin-left: 99px;
-    text-shadow: 1px 1px rgb(249, 224, 224);
-}
-#email_text{
-    margin-left: 60px;
-}
-#password_text{
-    Margin-left: 60px;
-}
-#text{
-    height: 40px;
-    width: 400px;
-    margin-left: 60px;
-    border-radius: 10px;
-}
-#forgot_pass{
-    margin-left: 60px;
-}
-#login_button{
-    margin-left: 100px;
-    height: 55px;
-    width: 330px;
-    border-radius: 10px;
-    background-color: rgb(96, 77, 219);
-    cursor: pointer;
-}
-#login_button:hover{
-    background-color: rgb(232, 224, 224);
-    cursor: pointer;
+/* login.css */
 
+.wrapper1 {
+  width: 420px;
+  height: 650px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(70px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: #0b0101;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin-left: 10px;
 }
 
-.signin_button{
-    margin-left: 100px;
-    height: 55px;
-    width: 330px;
-    border-radius: 10px;
-    background-color: rgb(242, 242, 247);
-    cursor: pointer;
-}
-.signin_button:hover{
-    background-color: rgb(89, 46, 207);
+.invalid-password {
+  border-bottom: 2px solid #ff0000; /* Red border for invalid password */
 }
 
-#sign_msg
-{
-    margin-left: 200px;
-}
-hr{
-    background-color: rgb(255, 0, 0);
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
-#back1
-{
-    background-image: url("img23.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
+#title1 {
+  color: rgb(255, 255, 255);
+  margin-left: 409px;
+  margin-top: -65px;
 }
 
-
-img {
-    width: 50px; 
-    height: 50px; 
-    margin-top: -8px;
-    margin-left: 59px;
+#welcome_text1 {
+  margin-left: 20px;
+  margin-top: -20px;
+  color:white;
 }
 
-#new
-{
-    margin-left: 50px;
+#email_text1 {
+  margin-left: -290px;
+  font-size: 20px;
 }
+
+#password_text1 {
+  Margin-left: -250px;
+}
+
+#text11,
+#text22 {
+  font-size: 15px;
+  height: 40px;
+  width: 350px;
+  margin-left: 1px;
+  margin-top: -60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 0px;
+}
+
+#forgot_pass1 {
+  font-size: 18px;
+  margin-left: 200px;
+  margin-top: -45px;
+}
+
+.fp {
+  font-size: 8px;
+}
+
+.loginbutton {
+  height: 0px;
+}
+
+.hr {
+  margin-top: -10px;
+}
+
+#sign_msg1 {
+  font-size: 18px;
+  margin-left: -10px;
+}
+
+.create {
+  color: white;
+  text-decoration: underline;
+  margin-left: 410px;
+  margin-top: -27px;
+}
+
+hr {
+  background-color: white;
+}
+
+.qqq {
+  margin-top: 60px;
+}
+
+.lll {
+  margin-left: 125px;
+  margin-top: -43px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url('C:\Users\darsh\Desktop\My_Website\pet_adoption\src\Component\Images\backk34.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#check {
+  height: 15px;
+  width: 50px;
+  margin-top: -50px;
+  margin-left: -160px;
+}
+
+.rm {
+  font-size: 18px;
+  margin-left: -35px;
+}
+
+.btn button {
+  height: 40px;
+  width: 410px;
+  border-radius: 9px;
+  background-color: #5c31c8c8;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px  black;
+}
+
+.btn :hover {
+  background-color: rgb(58, 144, 197);
+  cursor: pointer;
+  box-shadow: 2px 2px 2px  black;
   
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+/* .reg3 {
+  margin-top: -10px;
+  margin-left: 5px;
+  border-radius: 9px;
+  height: 40px;
+  width: 410px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 2px 2px rgb(229, 4, 4);
+  transition: border-color 0.3s ease;
+}
+
+.reg3:hover {
+  background-color: #4139b1;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+} */
+
+.invalid-email {
+  border-bottom: 2px solid #ff0000; 
+}
+
+.signuplink{
+  text-decoration: none;
+  color:rgb(206, 190, 190);
+}
+
+.signuplink:hover{
+  color:red;
+}
